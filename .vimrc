@@ -34,16 +34,10 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-  vmap <C-c> "+yi
-  vmap <C-x> "+c
-  vmap <C-v> c<ESC>"+p
-  imap <C-v> <C-r><C-o>+
-else
-  colorscheme delek 
-endif
+" shortcut commands
+command! VIMRC :e ~/.vimrc
+command! NOTES :e ~/.vim/notes.md
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -68,3 +62,17 @@ Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"--------------------------
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+  vmap <C-c> "+yi
+  vmap <C-x> "+c
+  vmap <C-v> c<ESC>"+p
+  imap <C-v> <C-r><C-o>+
+else
+  colorscheme zenburn 
+endif
+
+
