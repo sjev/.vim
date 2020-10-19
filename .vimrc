@@ -1,5 +1,4 @@
-" see tutorial on https://realpython.com/vim-and-python-a-match-made-in-heaven/
-
+" see tutorial on https://realpython.com/vim-and-python-a-match-made-in-heaven/ 
 set encoding=utf-8
 
 set nocompatible              " required
@@ -36,7 +35,8 @@ au BufNewFile,BufRead *.py
 
 " shortcut commands
 command! VIMRC :e ~/.vimrc
-command! NOTES :e ~/.vim/notes.md
+command! NOTES :vsp ~/.vim/notes.md
+command! SOURCE :source ~/.vimrc
 
 
 " set the runtime path to include Vundle and initialize
