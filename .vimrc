@@ -37,7 +37,7 @@ au BufNewFile,BufRead *.py
 command! VIMRC :e ~/.vimrc
 command! NOTES :vsp ~/.vim/notes.md
 command! SOURCE :source ~/.vimrc
-
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
