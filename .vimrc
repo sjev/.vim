@@ -7,6 +7,9 @@ filetype off                  " required
 "show line numbers
 set nu
 
+" automatic directory change
+set autochdir
+
 " toggle highligh search
 noremap <F4> :set hlsearch! hlsearch?<CR>
 
@@ -16,12 +19,23 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" line moving
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+"Standard indentation
+:set shiftwidth=4
+:set autoindent
+:set smartindent
 
 "Python indentation
 au BufNewFile,BufRead *.py
@@ -35,9 +49,8 @@ au BufNewFile,BufRead *.py
 
 " shortcut commands
 command! VIMRC :e ~/.vimrc
-command! NOTES :vsp ~/.vim/notes.md
+command! NOTES :vs ~/.vim/notes.md
 command! SOURCE :source ~/.vimrc
-
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
